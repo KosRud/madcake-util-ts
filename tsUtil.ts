@@ -9,3 +9,7 @@ export type DeepReadonly<T> = T extends { [k in keyof T]: T[k] }
 export function deepReadonly<T>(value: T) {
 	return value as DeepReadonly<T>;
 }
+
+function isNotEmpty<T>(arr: T[]): arr is [T, ...T[]] {
+	return arr.length > 0;
+}
