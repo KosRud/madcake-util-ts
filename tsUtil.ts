@@ -10,6 +10,6 @@ export function deepReadonly<T>(value: T) {
 	return value as DeepReadonly<T>;
 }
 
-function isNotEmpty<T>(arr: T[]): arr is [T, ...T[]] {
+export function isNotEmpty<T>(arr: T[]): arr is [T, ...T[]] {
 	return arr.length > 0;
 }
