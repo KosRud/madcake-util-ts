@@ -1,4 +1,4 @@
-export function deferScope<T>(
+export function useDefer<T>(
 	fn: (defer: (fnToDefer: () => void) => void) => T
 ): T {
 	const deferred: (() => void)[] = [];
