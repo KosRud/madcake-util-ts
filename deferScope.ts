@@ -1,24 +1,21 @@
-export function deferScope(
-	fn: (defer: (fnToDefer: () => void) => void) => void
-) {
+export function deferScope<T>(
+	fn: (defer: (fnToDefer: () => void) => void) => T
+): T {
 	const deferred: (() => void)[] = [];
-	let thrown = false,
-		err: unknown = null;
 	try {
-		fn((fnToDefer) => {
+		return fn((fnToDefer) => {
 			deferred.push(fnToDefer);
 		});
 	} catch (e) {
-		thrown = true;
-		err = e;
+		throw e;
 	} finally {
-		deferred.reverse();
-		deferred.forEach(function (deferredFn) {
-			deferredFn();
-		});
-		if (thrown) {
-			// deno-lint-ignore no-unsafe-finally
-			throw err;
-		}
+		runDeferredQueue(deferred);
 	}
+}
+
+function runDeferredQueue(deferred: (() => void)[] = []) {
+	deferred.reverse();
+	deferred.forEach(function (deferredFn) {
+		deferredFn();
+	});
 }
