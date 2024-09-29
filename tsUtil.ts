@@ -10,4 +10,4 @@ export function deepReadonly<T>(value: T) {
 	return value as DeepReadonly<T>;
 }
 
-export * from './Array.ts';
+export * from './src/Array.ts';
