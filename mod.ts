@@ -1,3 +1,3 @@
-export * from './tsUtil.ts';
-export * from './StrictEventTarget.ts';
-export * from './useDefer.ts';
+export * from './src/tsUtil.ts';
+export * from './src/StrictEventTarget.ts';
+export * from './src/useDefer.ts';

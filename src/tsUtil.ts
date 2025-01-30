@@ -10,4 +10,6 @@ export function deepReadonly<T>(value: T) {
 	return value as DeepReadonly<T>;
 }
 
-export * from './src/Array.ts';
+export function logJSON(obj: Record<string | number | symbol, any>) {
+	console.log(JSON.stringify(obj, null, 2));
+}
