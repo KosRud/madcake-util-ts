@@ -1,0 +1,4 @@
+{
+	"include": ["src/augmentations/**/*.ts"],
+	"extends": "./tsconfig.json"
+}
