@@ -14,12 +14,12 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.mts",
-      "types": "./dist/index.d.mts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./augmentations": {
-      "import": "./dist/augmentations/index.mts",
-      "types": "./dist/augmentations/index.d.mts"
+      "import": "./dist/augmentations/index.js",
+      "types": "./dist/augmentations/index.d.ts"
     }
   },
   "main": "./dist/index.mjs",
